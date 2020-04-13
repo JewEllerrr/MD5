@@ -14,15 +14,15 @@ int main(int argc, char* argv[]) {
     setlocale(LC_ALL, "Russian");
     //MD5File("Path to file");
     const char* string = "md5";
-    unsigned int len = strlen(string);
-    MD5(string, len);
+    MD5(string);
 
     return (0);
 }
 
-void MD5(const char* string, unsigned int len)
+void MD5(const char* string)
 {
     MD5_CTX context;
+    unsigned int len = strlen(string);
     unsigned char digest[MD5_DIGEST_LENGTH];
     MD5Init(&context);
     MD5Update(&context, (unsigned char*)string, len);
